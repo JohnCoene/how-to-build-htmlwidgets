@@ -1,0 +1,20 @@
+/* override shitty bootstrap: I'm not writing a new generator */
+
+body{
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.main-container{
+  margin: 0px !important;
+  max-width: none !important;
+}
+
+.container-fluid{
+  padding: 0px !important;
+}
+
+#header{
+  visibility: hidden;
+  height: 0px;
+}

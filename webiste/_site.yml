@@ -1,0 +1,9 @@
+name: "How to build htmlwidgets"
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      in_header: includes/header.html
+      after_body: includes/footer.html
+    css: assets/css/styles.css
