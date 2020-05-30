@@ -42,7 +42,7 @@ div(
           tags$li(
             class = "collection-item", 
             "Packages devtools and htmlwidgets installed",
-            tags$small(code('install.packages(c("devtools", "htmlwidgets"))'))
+            tags$pre(code('install.packages(c("devtools", "htmlwidgets"))'))
           ),
           tags$li(
             class = "collection-item", 
@@ -51,11 +51,11 @@ div(
               href = "https://github.com/JohnCoene/how-to-build-htmlwidgets",
               "github.com/JohnCoene/how-to-build-htmlwidgets"
             ),
-            tags$small(code('git clone https://github.com/JohnCoene/how-to-build-htmlwidgets.git')),
-          tags$li(
-            class = "collection-item", 
-            "Register for e-Rum and the workshop"
-          )
+            tags$pre(code('git clone https://github.com/JohnCoene/how-to-build-htmlwidgets.git')),
+            tags$li(
+              class = "collection-item", 
+              "Register for e-Rum and the workshop"
+            )
           )
         )
       )
