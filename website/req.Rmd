@@ -16,17 +16,24 @@ There are two ways to follow along this workshop; from your local machine or fro
 div(
   class = "row",
   div(
-    class = "col s8",
+    class = "col s6",
     div(
       class = "card",
       div(
+        class = "card-image",
+        tags$img(src = "assets/img/laptop.png"),
+        h1(class = "card-title blue-text text-darken-1", "Local", span("_", class = "orange-text", .noWS = "before"))
+      ),
+      div(
         class = "card-content",
-        h1(class = "card-title blue-text text-darken-1", "Local", span("_", class = "orange-text", .noWS = "before")),
         p("Required:"),
         tags$ul(
           class = "collection",
           tags$li(
             class = "collection-item", "A recent installation of R"
+          ),
+          tags$li(
+            "A text editor or IDE you are comfortable with, e.g.: RStudio."
           ),
           tags$li(
             class = "collection-item", 
@@ -47,12 +54,16 @@ div(
     )
   ),
   div(
-    class = "col s4",
+    class = "col s6",
     div(
       class = "card",
       div(
-        class = "card-content",
+        class = "card-image",
+        tags$img(src = "assets/img/server.jpg"),
         h1(class = "card-title blue-text text-darken-1", "Remote", span("_", class = "orange-text", .noWS = "before"))
+      ),
+      div(
+        class = "card-content"
       )
     )
   )
