@@ -1,0 +1,5 @@
+dependencies:
+  - name: typed
+    version: 2.0.11
+    src: htmlwidgets/lib/typed
+    script: typed.min.js

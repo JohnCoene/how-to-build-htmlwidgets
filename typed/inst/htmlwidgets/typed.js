@@ -1,6 +1,6 @@
 HTMLWidgets.widget({
 
-  name: 'baffle',
+  name: 'typed',
 
   type: 'output',
 
