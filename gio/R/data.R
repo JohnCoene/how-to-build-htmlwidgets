@@ -3,9 +3,9 @@
 #' @param n Number of rows.
 #' 
 #' @export
-random_data <- function(n){
+random_data <- function(n = 100){
   # values
-  values <- runif(n, 10^2, 10^4)
+  values <- runif(n, 10^5, 10^7)
   values <- round(values)
 
   # edges
@@ -19,30 +19,27 @@ random_data <- function(n){
     stringsAsFactors = FALSE
   )
 
-  # remove self-loop
   subset(df, df$e != df$i)
 }
 
-iso2 <- c("CF", "TD", "CL", "CC", "CK", "CU", "CD", "GU", "IR", "IQ", 
-"LA", "LC", "ML", "MT", "YT", "MX", "NE", "OM", "RU", "ST", "SS", 
-"SA", "NL", "CG", "FR", "CN", "SD", "WS", "YE", "HU", "LU", "AW", 
-"CW", "HN", "SK", "KR", "DE", "PK", "GN", "AT", "BE", "SX", "RS", 
-"IE", "ME", "GE", "VN", "VG", "VI", "AS", "BQ", "GF", "IM", "TL", 
-"CZ", "AF", "AL", "DZ", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", 
-"AU", "AZ", "BS", "BH", "BD", "BB", "BL", "BY", "BZ", "BJ", "BM", 
-"BT", "GW", "BO", "BW", "BV", "BR", "IO", "BN", "BG", "BF", "BI", 
-"KH", "CM", "CA", "KY", "CX", "CO", "KM", "CR", "HR", "CY", "DK", 
-"DJ", "DM", "DO", "KP", "EC", "EG", "SV", "AE", "ER", "EE", "ET", 
-"FK", "FO", "FM", "FJ", "FI", "PF", "TF", "WF", "GA", "GM", "GH", 
-"GI", "GR", "GL", "GD", "GP", "GT", "GG", "GQ", "GY", "HT", "HM", 
-"SH", "BA", "VA", "HK", "IS", "IN", "ID", "IL", "IT", "CI", "JM", 
-"JP", "JE", "JO", "KZ", "KE", "KI", "KN", "KW", "KG", "LV", "LB", 
-"LS", "LR", "LY", "LI", "LT", "MO", "MK", "MG", "MW", "MY", "MV", 
-"MP", "MH", "MQ", "MR", "MU", "UM", "PM", "MD", "MC", "MN", "MS", 
-"MA", "MZ", "MM", "NA", "NR", "NP", "NC", "NZ", "NI", "NG", "NU", 
-"NF", "NO", "PW", "PS", "PA", "PG", "PY", "PE", "PH", "PN", "PL", 
-"PT", "PR", "QA", "RE", "RO", "RW", "MF", "SM", "SN", "SC", "SL", 
-"SG", "SI", "SB", "SO", "GS", "ZA", "ES", "LK", "SR", "SJ", "SZ", 
-"SE", "CH", "SY", "TW", "TJ", "TZ", "TH", "TG", "TK", "TO", "TT", 
-"TN", "TR", "TM", "TC", "TV", "UG", "UA", "GB", "US", "UY", "UZ", 
-"VU", "VE", "CV", "VC", "EH", "ZM", "ZW")
+iso2 <- c("PE", "BF", "FR", "LY", "BY", "PK", "ID", "YE", "MG", "BO", 
+"CI", "DZ", "CH", "CM", "MK", "BW", "UA", "KE", "TW", "JO", "MX", 
+"AE", "BZ", "BR", "SL", "ML", "CD", "IT", "SO", "AF", "BD", "DO", 
+"GW", "GH", "AT", "SE", "TR", "UG", "MZ", "JP", "NZ", "CU", "VE", 
+"PT", "CO", "MR", "AO", "DE", "SD", "TH", "AU", "PG", "IQ", "HR", 
+"GL", "NE", "DK", "LV", "RO", "ZM", "IR", "MM", "ET", "GT", "SR", 
+"EH", "CZ", "TD", "AL", "FI", "SY", "KG", "SB", "OM", "PA", "AR", 
+"GB", "CR", "PY", "GN", "IE", "NG", "TN", "PL", "NA", "ZA", "EG", 
+"TZ", "GE", "SA", "VN", "RU", "HT", "BA", "IN", "CN", "CA", "SV", 
+"GY", "BE", "GQ", "LS", "BG", "BI", "DJ", "AZ", "MY", "PH", "UY", 
+"CG", "RS", "ME", "EE", "RW", "AM", "SN", "TG", "ES", "GA", "HU", 
+"MW", "TJ", "KH", "KR", "HN", "IS", "NI", "CL", "MA", "LR", "NL", 
+"CF", "SK", "LT", "ZW", "LK", "IL", "LA", "KP", "GR", "TM", "EC", 
+"BJ", "SI", "NO", "MD", "LB", "NP", "ER", "US", "KZ", "AQ", "SZ", 
+"UZ", "MN", "BT", "NC", "FJ", "KW", "TL", "BS", "VU", "FK", "GM", 
+"QA", "JM", "CY", "PR", "PS", "BN", "TT", "CV", "PF", "WS", "LU", 
+"KM", "MU", "FO", "ST", "DM", "TO", "KI", "FM", "BH", "AD", "MP", 
+"PW", "SC", "AG", "BB", "TC", "VC", "LC", "YT", "VI", "GD", "MT", 
+"MV", "KY", "KN", "MS", "BL", "NU", "PM", "CK", "WF", "AS", "MH", 
+"AW", "LI", "VG", "SH", "JE", "AI", "GG", "SM", "BM", "TV", "NR", 
+"GI", "PN", "MC", "VA", "IM", "GU", "SG")
