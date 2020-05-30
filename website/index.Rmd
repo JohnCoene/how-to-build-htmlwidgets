@@ -6,7 +6,7 @@ title: "How to build htmlwidgets"
 library(htmltools)
 ```
 
-<div class="container" style="min-height:80vh;">
+<div class="container" style="min-height:75vh;">
 
 ```{r, echo=FALSE}
 img(src="https://2020.erum.io/wp-content/uploads/2019/11/logo_website.png")

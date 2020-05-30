@@ -18,3 +18,10 @@ body{
   visibility: hidden;
   height: 0px;
 }
+
+/* style */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;500&display=swap');
+
+body{
+  font-family: 'Raleway', sans-serif;
+}

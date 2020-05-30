@@ -1,0 +1,5 @@
+dependencies:
+  - name: baffle
+    version: 0.3.6
+    src: htmlwidgets/lib/baffle
+    script: baffle.min.js
