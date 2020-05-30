@@ -71,7 +71,8 @@ div(
         h1(class = "card-title blue-text text-darken-1", "Remote", span("_", class = "orange-text", .noWS = "before"))
       ),
       div(
-        class = "card-content"
+        class = "card-content",
+        p("Coming soon: will be up for the workshop.")
       )
     )
   )
