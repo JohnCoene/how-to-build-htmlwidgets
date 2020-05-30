@@ -1,0 +1,29 @@
+---
+title: "FAQ"
+---
+
+<div class="container" style="min-height:75vh;">
+
+<h1>FAQ</h1>
+
+## Do I need to know JavaScript?
+
+No.
+
+## Is this to learn JavaScript?
+
+No. 
+
+## But we are going to write a lot of JavaScript?
+
+No, on the contrary, as little as possible.
+
+## What level of R programming is required?
+
+You need to be familiar with the language and its data structures, some experience in package development and JSON goes a long way but is not necessary.
+
+## How long is the workshop?
+
+Roughly 3 hours of fun!
+
+</div>

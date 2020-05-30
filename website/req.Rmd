@@ -10,6 +10,10 @@ library(htmltools)
 
 <h1>Prerequisites</h1>
 
+You __do not__ need to know JavaScript to follow along.
+
+<h2>Setup</h2>
+
 There are two ways to follow along this workshop; from your local machine or from the remote RStudio Cloud projects.
 
 ```{r, echo=FALSE}
@@ -30,15 +34,15 @@ div(
         tags$ul(
           class = "collection",
           tags$li(
-            class = "collection-item", "A recent installation of R"
+            class = "collection-item", "A recent installation of R (R >= 3.6.0)"
           ),
           tags$li(
-            "A text editor or IDE you are comfortable with, e.g.: RStudio."
+            class = "collection-item", "A text editor or IDE you are comfortable with, e.g.: RStudio."
           ),
           tags$li(
             class = "collection-item", 
             "Packages devtools and htmlwidgets installed",
-            code('install.packages(c("devtools", "htmlwidgets"))')
+            tags$small(code('install.packages(c("devtools", "htmlwidgets"))'))
           ),
           tags$li(
             class = "collection-item", 
@@ -47,7 +51,11 @@ div(
               href = "https://github.com/JohnCoene/how-to-build-htmlwidgets",
               "github.com/JohnCoene/how-to-build-htmlwidgets"
             ),
-            code('git clone https://github.com/JohnCoene/how-to-build-htmlwidgets.git')
+            tags$small(code('git clone https://github.com/JohnCoene/how-to-build-htmlwidgets.git')),
+          tags$li(
+            class = "collection-item", 
+            "Register for e-Rum and the workshop"
+          )
           )
         )
       )

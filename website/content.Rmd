@@ -1,0 +1,27 @@
+---
+title: "Content"
+---
+
+<div class="container" style="min-height:75vh;">
+
+<h1>Workshop</h1>
+
+<h2>What you will learn</h2>
+
+You will learn how to build your own packages for visualisations using [htmlwidgets](http://www.htmlwidgets.org/). htmlwidgets is the backbone of packages such as [leaflet](https://rstudio.github.io/leaflet/), [plotly](https://plotly.com/r/), [highcharter](http://jkunst.com/highcharter/), and many others. The aim is that by the end of the workshop you will be able to write your own such packages.
+
+<h2>Methodology</h2>
+
+Learn by doing. I believe, this remains the best way to learn anything. The workshop will therefore have you write a lot of the code.
+
+<h2>Plan</h2>
+
+<ul class="collection with-header">
+<li class="collection-item"><p>Introduction to the basics (20-30 mins)</p></li>
+<li class="collection-item"><p>Build our first widget together (45-60 mins)</p></li>
+<li class="collection-item"><p>Coffee Break</p></li>
+<li class="collection-item"><p>Build our next widget (60 mins)</p></li>
+<li class="collection-item"><p>Additional functionalities (30 mins)</p></li>
+</ul>
+
+</div>

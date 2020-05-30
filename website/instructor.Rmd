@@ -2,4 +2,89 @@
 title: "Instructor"
 ---
 
-More about this website.
+```{r, include = FALSE}
+library(htmltools)
+```
+
+<div class="container" style="min-height:75vh;">
+
+<h1>Instructor</h1>
+
+```{r, echo = FALSE}
+div(
+  class = "card horizontal",
+  div(
+    class = "card-image",
+    tags$img(src = "https://github.com/JohnCoene.png")
+  ),
+  div(
+    class = "card-stacked",
+    div(
+      class = "card-content",
+      h2("Hi, I'm John"),
+      p("I am a data analyst currently based in Geneva, Switzerland and I have build numerous packages for interactive visualisations."),
+      tags$ul(
+        class = "collection",
+        tags$li(
+          class = "collection-item",
+          div(
+            "echarts4r",
+            tags$a(
+              class = "secondary-content blue-text",
+              href = "https://echarts4r.john-coene.com",
+              tags$i(class="material-icons", "insert_link")
+            )
+          )
+        ),
+        tags$li(
+          class = "collection-item",
+          div(
+            "sigmajs",
+            tags$a(
+              class = "secondary-content blue-text",
+              href = "https://sigmajs.john-coene.com",
+              tags$i(class="material-icons", "insert_link")
+            )
+          )
+        ),
+        tags$li(
+          class = "collection-item",
+          div(
+            "grapher",
+            tags$a(
+              class = "secondary-content blue-text",
+              href = "https://grapher.network",
+              tags$i(class="material-icons", "insert_link")
+            )
+          )
+        ),
+        tags$li(
+          class = "collection-item",
+          div(
+            "globe4r",
+            tags$a(
+              class = "secondary-content blue-text",
+              href = "https://globe4r.john-coene.com",
+              tags$i(class="material-icons", "insert_link")
+            )
+          )
+        ),
+        tags$li(
+          class = "collection-item",
+          div(
+            "g2r",
+            tags$a(
+              class = "secondary-content blue-text",
+              href = "https://g2r.dev",
+              tags$i(class="material-icons", "insert_link")
+            )
+          )
+        )
+      ),
+      p("And many others.")
+    )
+  )
+)
+```
+
+</div>
