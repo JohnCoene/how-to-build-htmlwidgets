@@ -6,4 +6,4 @@
 
 </div>
 
-Repository for the "How to build htmlwidgets" e-Rum 2020 workshop.
+Repository for the "How to build htmlwidgets" e-Rum 2020 workshop to be held on June 20.
