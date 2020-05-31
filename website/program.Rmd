@@ -1,10 +1,10 @@
 ---
-title: "Content"
+title: "Program"
 ---
 
 <div class="container" style="min-height:75vh;">
 
-<h1>Workshop</h1>
+<h1>Program</h1>
 
 <h2>What you will learn</h2>
 

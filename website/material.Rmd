@@ -1,5 +1,5 @@
 ---
-title: "Prerequisites"
+title: "Material"
 ---
 
 ```{r, include = FALSE}
@@ -8,7 +8,7 @@ library(htmltools)
 
 <div class="container" style="min-height:75vh;">
 
-<h1>Prerequisites</h1>
+<h1>Material</h1>
 
 You __do not__ need to know JavaScript to follow along.
 
@@ -72,7 +72,8 @@ div(
       ),
       div(
         class = "card-content",
-        p("Coming soon: will be up for the workshop.")
+        p("You use the", tags$a("RStudio Cloud project", href = "https://rstudio.cloud/project/1336120", .noWS = "after"), 
+        "if working locally is not ideal.")
       )
     )
   )

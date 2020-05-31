@@ -81,7 +81,7 @@ div(
           )
         )
       ),
-      p("And many others.")
+      p("And many others available on", tags$a("github", href="https://github.com/JohnCoene"))
     )
   )
 )

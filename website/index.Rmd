@@ -16,9 +16,9 @@ div(
     class = "card-content white-text",
     h1(class = "card-title", "Learn how to build your own interactive data visualization packages"),
     h1("How to build htmlwidgets", span("_", class = "orange-text", .noWS = "before")),
-    h3("e-Rum 2020 Workshop"),
+    h3("e-Rum virtual workshop"),
     hr(),
-    h4("June 20, virtual event"),
+    h4("June 20, 2020"),
     
   )
 )
