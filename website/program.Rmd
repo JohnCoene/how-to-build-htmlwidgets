@@ -12,7 +12,7 @@ You will learn how to build your own packages for visualisations using [htmlwidg
 
 <h2>Methodology</h2>
 
-Learn by doing. I believe, this remains the best way to learn anything. The workshop will therefore have you write a lot of the code.
+Learn by doing. I believe this remains the best way to go about, the workshop will therefore have you write a quite a bit of code.
 
 <h2>Plan</h2>
 

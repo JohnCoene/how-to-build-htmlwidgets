@@ -8,7 +8,7 @@ title: "FAQ"
 
 ## Who is this for?
 
-Any R programmer interested in visualisation.
+R programmers interested in visualisation with little knowledge of JavaScript.
 
 ## Do I need to know JavaScript?
 
@@ -29,5 +29,9 @@ You need to be familiar with the language and its data structures, some experien
 ## How long is the workshop?
 
 Roughly 3 hours of fun!
+
+## I know a lot about htmlwidgets, should I attend?
+
+Probably not, you already know most of what will be taught.
 
 </div>
