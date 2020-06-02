@@ -16,6 +16,8 @@ Learn by doing. I believe this remains the best way to go about, the workshop wi
 
 <h2>Plan</h2>
 
+This is a rough plan, things are likely to change depending on the pace we pick up; the point is not to rush things but if great progress is make we can delve into the more advanced stuff at the end.
+
 <ul class="collection with-header">
 <li class="collection-item"><p>Introduction to the basics (20-30 mins)</p></li>
 <li class="collection-item"><p>Build our first widget together (45-60 mins)</p></li>
