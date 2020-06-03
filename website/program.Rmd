@@ -8,15 +8,15 @@ title: "Program"
 
 <h2>What you will learn</h2>
 
-You will learn how to build your own packages for visualisations using [htmlwidgets](http://www.htmlwidgets.org/). htmlwidgets is the backbone of packages such as [leaflet](https://rstudio.github.io/leaflet/), [plotly](https://plotly.com/r/), [highcharter](http://jkunst.com/highcharter/), and many others. The aim is that by the end of the workshop you will be able to write your own such packages.
+You will learn how to build your own packages for visualisations using [htmlwidgets](http://www.htmlwidgets.org/). htmlwidgets is the backbone of packages such as [leaflet](https://rstudio.github.io/leaflet/), [plotly](https://plotly.com/r/), [highcharter](http://jkunst.com/highcharter/), and many others. The aim is that by the end of the workshop you will be able to write your own such packages!
 
 <h2>Methodology</h2>
 
-Learn by doing. I believe this remains the best way to go about, the workshop will therefore have you write a quite a bit of code.
+Learn by doing. I believe this remains the best way to go about it; the workshop will therefore have you write a quite a bit of code.
 
 <h2>Plan</h2>
 
-This is a rough plan, things are likely to change depending on the pace we pick up; the point is not to rush things but if great progress is make we can delve into the more advanced stuff at the end.
+This is a rough plan, things are likely to change depending on the pace we pick up. The point is not to rush things but if great progress is made, we can delve into more advanced stuff at the end.
 
 <ul class="collection with-header">
 <li class="collection-item"><p>Introduction to the basics (20-30 mins)</p></li>
