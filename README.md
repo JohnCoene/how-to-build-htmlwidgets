@@ -4,7 +4,7 @@
 
 <br/><br/>
 
-<h3> [Website](http://htmlwidgets.john-coene.com/) | [FAQ](https://htmlwidgets.john-coene.com/faq.html) | [Material](https://htmlwidgets.john-coene.com/content.html) | [Prerequisites](https://htmlwidgets.john-coene.com/req.html) </h3>
+### [Website](http://htmlwidgets.john-coene.com/) | [FAQ](https://htmlwidgets.john-coene.com/faq.html) | [Material](https://htmlwidgets.john-coene.com/content.html) | [Prerequisites](https://htmlwidgets.john-coene.com/req.html)
 
 Repository for the "How to build htmlwidgets" e-Rum 2020 workshop to be held on June 20.
 
