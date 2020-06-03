@@ -72,7 +72,7 @@ div(
       ),
       div(
         class = "card-content",
-        p("You use the", tags$a("RStudio Cloud project", href = "https://rstudio.cloud/project/1336120"), 
+        p("You can use the", tags$a("RStudio Cloud project", href = "https://rstudio.cloud/project/1336120"), 
           "in the event that you cannot work on your local machine.")
       )
     )

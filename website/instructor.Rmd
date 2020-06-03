@@ -22,7 +22,7 @@ div(
     div(
       class = "card-content",
       h2("Hi, I'm John"),
-      p("I am a data analyst currently based in Geneva, Switzerland and I have build numerous packages for interactive visualisations."),
+      p("I am a data analyst currently based in Geneva. I have build numerous htmlwidgets:"),
       tags$ul(
         class = "collection",
         tags$li(
