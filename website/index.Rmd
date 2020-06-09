@@ -18,7 +18,7 @@ div(
     h1("How to build htmlwidgets", span("_", class = "orange-text", .noWS = "before")),
     h3("e-Rum virtual workshop"),
     hr(),
-    h4("June 20, 2020"),
+    h4("June 20, 14:00-17:00 CEST"),
     
   )
 )
