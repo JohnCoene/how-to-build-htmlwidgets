@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Ubuntu+Mono&display=swap');
+
+body{
+  font-family: 'Quicksand', sans-serif;
+}
+
+.title-slide{
+  background-color:#2a388f;
+}
+
+.title-slide > h1, .title-slide > h2{
+  color: #d0d3d6 !important;
+}
+
+h1,h2,h3,h4{
+  font-family: 'Quicksand', sans-serif;
+}
+
+.inverse{
+  background-color:#2a388f;
+}
+
+h1, h2{
+  color: #2a388f !important;
+}
+
+p{
+  color: #2a388f !important;
+}
+
+a{
+  color: #333e48 !important;
+  text-decoration: underline;
+}
+
+pre, code{
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.centerize {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.remark-slide-content{
+  border-bottom: 5px solid #2a388f;
+}
+
+.pull-left {
+  float: left;
+  width: 47%;
+}
+.pull-right {
+  float: right;
+  width: 47%;
+}
+
+div.my-footer {
+  background-color: rgba(255,255,255,0);
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 20px;
+  width: 100%;
+}
+div.my-footer span {
+  font-size: 10pt;
+  color: #2a388f;
+  position: absolute;
+  left: 15px;
+  bottom: 5px;
+}

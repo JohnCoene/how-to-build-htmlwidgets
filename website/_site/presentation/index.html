@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>How to build htmlwidgets</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="John Coene" />
+    <script src="libs/header-attrs-2.2/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/fc.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# How to build htmlwidgets
+## e-Rum 2020 Workshop
+### John Coene
+### 20-06-2020
+
+---
+
+
+layout: true
+  
+&lt;div class="my-header"&gt;&lt;/div&gt;
+
+&lt;div class="my-footer"&gt;&lt;span&gt;How to build htmlwidgets workshop&lt;/span&gt;&lt;/div&gt; 
+
+---
+
+.centerize[
+
+  ## Plan
+
+  Introduction to the basics (this) ~15 mins &lt;br&gt;&lt;br&gt;
+  Explore htmlwidgets hands-on ~45 mins &lt;br&gt;&lt;br&gt;
+  Build a widget for [typed.js](https://github.com/mattboldt/typed.js/) &lt;br&gt;&lt;br&gt;
+  Short break &lt;br&gt;&lt;br&gt;
+  Build a widget for [gio.js](https://giojs.org/)
+
+]
+
+---
+
+.centerize[
+
+  Resources
+
+  ## htmlwidgets.john-coene.com
+
+]
+
+---
+
+
+
+.centerize[
+
+# What is "htmlwidgets"?
+
+An R Package to wrap external JavaScript libraries that produce a visual output. 
+
+]
+
+---
+
+## Examples
+
+Visit [gallery.htmlwidgets.org](https://gallery.htmlwidgets.org/)
+
+.pull-left[
+  **plotly**
+  &lt;br/&gt;
+  &lt;img src="plotly.png" height="200px" /&gt;
+
+  **DT**
+  &lt;br/&gt;
+  &lt;img src="dt.png" height="200px" /&gt;
+]
+
+.pull-right[
+  **leaflet**
+  &lt;br/&gt;
+  &lt;img src="leaflet.png" height="200px" /&gt;
+
+  **wordcloud2**
+  &lt;br/&gt;
+  &lt;img src="wordcloud2.png" height="200px" /&gt;
+]
+
+---
+
+## Shameless Promotions
+
+A few of the htmlwidgets I have built.
+
+.pull-left[
+  **echarts4r**
+  &lt;br/&gt;
+  &lt;img src="echarts4r.png" height="200px" /&gt;
+
+  **grapher**
+  &lt;br/&gt;
+  &lt;img src="grapher.png" height="200px" /&gt;
+]
+
+.pull-right[
+  **sigmajs**
+  &lt;br/&gt;
+  &lt;img src="sigmajs.png" height="200px" /&gt;
+
+  **globe4r**
+  &lt;br/&gt;
+  &lt;img src="globe4r.png" height="200px" /&gt;
+]
+
+---
+
+.centerize[
+
+  ## Candidate Libraries
+
+  Understand what is expected of us
+
+]
+
+---
+
+.pull-left[
+  ## Plotly
+
+  - Import library
+  - `&lt;div&gt;` to hold viz
+  - `&lt;script&gt;` to generate 
+    + references `&lt;div&gt;`
+    + use JSON of options
+]
+
+.pull-right[
+
+```html
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+
+&lt;head&gt;
+  &lt;!-- Import library --&gt;
+  &lt;script src="plotly-latest.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;!-- div to hold visualisation --&gt;
+  &lt;div id="chart" style="width:600px;"&gt;&lt;/div&gt;
+
+  &lt;!-- Script to create visualsiation --&gt;
+  &lt;script&gt;
+    el = document.getElementById('chart');
+    Plotly.newPlot(el, [{
+      x: [1, 2, 3, 4, 5],
+      y: [1, 2, 4, 8, 16] }]
+    );
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+```
+
+]
+
+---
+
+.pull-left[
+  ## Highchart.js
+
+  - Import library
+  - `&lt;div&gt;` to hold viz
+  - `&lt;script&gt;` to generate 
+    + references `&lt;div&gt;`
+    + use JSON of options
+]
+
+.pull-right[
+
+```html
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+
+&lt;head&gt;
+  &lt;!-- Import library --&gt;
+  &lt;script src="highcharts.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;!-- div to hold visualisation --&gt;
+  &lt;div id="chart" style="width:100%;"&gt;&lt;/div&gt;
+
+  &lt;!-- Script to create visualsiation --&gt;
+  &lt;script&gt;
+    var myChart = Highcharts.chart('chart', {
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+```
+
+]
+
+---
+
+.pull-left[
+  ## Chart.js
+
+  - Import library
+  - `&lt;canvas&gt;` to hold viz
+  - `&lt;script&gt;` to generate
+    + references `&lt;canvas&gt;`
+    + use JSON of options
+]
+
+.pull-right[
+
+```html
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+
+&lt;head&gt;
+  &lt;!-- Import library --&gt;
+  &lt;script src="Chart.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;!-- canvas to hold visualisation --&gt;
+  &lt;canvas id="chart" width="400"&gt;&lt;/canvas&gt;
+
+  &lt;!-- Script to create visualsiation --&gt;
+  &lt;script&gt;
+    var el = document.getElementById('chart').getContext('2d');    
+    var myChart = new Chart(el, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5]
+        }]
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+```
+
+]
+
+---
+
+.centerize[
+
+  ## How would this be done in R?
+
+]
+
+---
+
+## Crate a static HTML file
+
+```html
+&lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+```
+
+---
+
+## Import dependencies
+
+```html
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="relative/path/plotly.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+```
+
+---
+
+## Create Canvas
+
+```html
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="relative/path/plotly.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="an-identifier"&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+
+---
+
+## Serialise R object
+
+```html
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="relative/path/plotly.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="an-identifier"&gt;&lt;/div&gt;
+    &lt;script&gt;[{Some: "JSON"}, data]&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+
+---
+
+## Import custom functions
+
+```html
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="relative/path/plotly.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="an-identifier"&gt;&lt;/div&gt;
+    &lt;script&gt;[{Some: "JSON"}, data]&lt;/script&gt;
+    &lt;script src="relative/path/custom.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+
+---
+
+.centerize[
+
+## Finally, I need to manage this across Shiny and R markdown...
+
+]
+
+---
+
+.centerize[
+
+  ## It __should be__ complicated
+
+]
+
+---
+
+.centerize[
+
+  Thankfully, it isn't
+
+  ## Meet __htmlwidgets__!
+
+]
+
+---
+
+.centerize[
+
+## Let's Start
+
+First, create a package with `usethis` or the RStudio IDE.
+
+```r
+usethis::create_package('playground')
+```
+
+Then, from the root of the package, build the scaffolding for our visualisation.
+
+```r
+htmlwidgets::scaffoldWidget("playground")
+```
+
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "default",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

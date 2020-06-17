@@ -20,9 +20,9 @@ This is a rough plan, things are likely to change depending on the pace we pick 
 
 <ul class="collection with-header">
 <li class="collection-item"><p>Introduction to the basics (20-30 mins)</p></li>
-<li class="collection-item"><p>Build our first widget together (45-60 mins)</p></li>
+<li class="collection-item"><p>Explore htmlwidgets (45-60 mins)</p></li>
 <li class="collection-item"><p>Coffee Break</p></li>
-<li class="collection-item"><p>Build our next widget (60 mins)</p></li>
+<li class="collection-item"><p>Build our second widget (60 mins)</p></li>
 <li class="collection-item"><p>Additional functionalities (30 mins)</p></li>
 </ul>
 
