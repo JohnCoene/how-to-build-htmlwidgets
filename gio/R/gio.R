@@ -5,12 +5,14 @@
 #' @import htmlwidgets
 #'
 #' @export
-gio <- function(message, width = NULL, height = NULL, elementId = NULL) {
+gio <- function(data, width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
   x = list(
-    message = message
+    data = data
   )
+
+  attr(x, 'TOJSON_ARGS') <- list(dataframe = "rows")
 
   # create widget
   htmlwidgets::createWidget(
@@ -19,8 +21,19 @@ gio <- function(message, width = NULL, height = NULL, elementId = NULL) {
     width = width,
     height = height,
     package = 'gio',
-    elementId = elementId
+    elementId = elementId,
+    sizingPolicy = htmlwidgets::sizingPolicy(
+      defaultWidth = "100%",
+      browser.fill = TRUE,
+      padding = 0
+    )
   )
+}
+
+#' @export
+set_style <- function(globe, style = "magic"){
+  globe$x$style <- style
+  return(globe)
 }
 
 #' Shiny bindings for gio

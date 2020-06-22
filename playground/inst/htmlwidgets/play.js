@@ -1,6 +1,6 @@
 HTMLWidgets.widget({
 
-  name: 'playground',
+  name: 'play',
 
   type: 'output',
 
@@ -12,8 +12,10 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
+        console.log(el.id);
+
         // TODO: code to render the widget, e.g.
-        el.innerText = x.message;
+        el.innerHTML = x.message; 
 
       },
 
